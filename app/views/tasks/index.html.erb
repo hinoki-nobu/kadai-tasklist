@@ -1,18 +1,6 @@
 <%= render 'tasks', tasks: @tasks %>
 
-<% if logged_in? %>
-  <!-- ログインしてたら -->
-
-  <!-- 新規タスクの投稿 -->
-  <%= link_to "新規タスクの投稿", new_task_path %> ｜ 
-  <!-- ログアウト -->
-  <%= link_to "ログアウト", logout_path, method: :delete %>
-  
-<% else %>
-  <!-- ログインしてなかったら -->
-
-  <!-- 新規登録 -->
-  <%= link_to "新規登録", signup_path %> ｜ 
-  <!-- ログイン -->
-  <%= link_to "ログイン", login_path %>
-<% end %>
+<!-- 新規タスクの投稿 -->
+<%= link_to "新規タスクの投稿", new_task_path %> ｜ 
+<!-- ログアウト -->
+<%= link_to "ログアウト", logout_path, method: :delete %>

@@ -21,7 +21,7 @@
       <th><h4>Kadai-Tasklist</h4></th>
       <% if logged_in? %>
         <td> ｜ </td>
-        <td><%= link_to current_user.name, user_path(current_user) %></td>
+        <td><%= current_user.name %></td>
       <% end %>
     </tr>
     </table>

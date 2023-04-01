@@ -5,13 +5,8 @@
       <td><%= task.user.name %> ｜ <%= task.created_at %></td>
     </tr>
     <tr>
-      <td><h3><%= task.id %>：<%= task.status %>｜<%= task.content %></h3></td>
+      <td><h3><%= link_to task.id, edit_task_path(task) %>：<%= task.status %>｜<%= task.content %></h3></td>
     </tr>
-    <% if current_user == task.user %>
-    <tr>
-      <td><%= link_to "編集する", edit_task_path(task) %> ｜ <%= link_to "削除する", task, method: :delete, data: { confirm: "本当に削除してよろしいですか？" } %></td>      
-    </tr>
-    <% end %>
     <tr><td><br></td></tr>
     </table>
   <% end %>

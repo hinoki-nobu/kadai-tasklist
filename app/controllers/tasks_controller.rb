@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-#  before_action :require_user_logged_in
+  before_action :require_user_logged_in
 #  before_action :correct_user, only: [:destroy]
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   
@@ -28,6 +28,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+    correct_user
   end
 
   def update
@@ -60,6 +61,7 @@ class TasksController < ApplicationController
   end
   
   def correct_user
+    # ログインユーザ以外だったらrootに行く
     @task = current_user.tasks.find_by(id: params[:id])
     unless @task
       redirect_to root_url
