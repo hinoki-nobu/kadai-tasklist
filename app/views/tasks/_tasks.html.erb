@@ -1,17 +1,14 @@
 <% if tasks.any? %>
   <% tasks.each do |task| %>
+    <% if current_user == task.user %>
     <table border="0">
     <tr>
       <td><%= task.user.name %> ｜ <%= task.created_at %></td>
     </tr>
     <tr>
-      <% if current_user == task.user %>
-        <td><h3><%= link_to task.id, edit_task_path(task) %>：<%= task.status %>｜<%= task.content %></h3></td>
-      <% else %>
-        <td><h3><%= task.id %>：<%= task.status %>｜<%= task.content %></h3></td>
-      <% end %>
+      <td><h3><%= link_to task.id, edit_task_path(task) %>：<%= task.status %>｜<%= task.content %></h3></td>
     </tr>
-    <tr><td><br></td></tr>
     </table>
+    <% end %>
   <% end %>
 <% end %>
