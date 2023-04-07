@@ -6,7 +6,7 @@
       <td><%= task.user.name %> ｜ <%= task.created_at %></td>
     </tr>
     <tr>
-      <td><h3><%= link_to task.id, edit_task_path(task) %>：<%= task.status %>｜<%= task.content %></h3></td>
+      <td><h3><%= link_to task.id, task_path(task) %>：<%= task.status %>｜<%= task.content %></h3></td>
     </tr>
     </table>
     <% end %>
